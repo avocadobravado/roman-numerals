@@ -1,19 +1,47 @@
 
 // Business Logic //
-var thousands = [];
-var hundreds = [];
-var tens = [];
+var resultOnes = [];
+var resultTens = [];
 var resultHundreds = [];
 var resultThousands = [];
-var romanNumeralResult = [];
 var userInput;
 
-var converter = function(num) {
-  var resultTens = [];
+var romanNumeralResult = function(ones, tens, hundreds, thousands) {
+  return resultOnes.concat(resultTens);
+};
+  console.log(romanNumeralResult());
+
+
+var ones = function(num) {
+  var resultOnes = [];
   if (num === 1) {
-    resultTens.push("I")
+    resultOnes.push("I")
   } else if (num === 2) {
-      resultTens.push("II");
+      resultOnes.push("II");
+  } else if (num === 3) {
+      resultOnes.push("III");
+  } else if (num === 4) {
+      resultOnes.push("IV");
+  } else if (num === 5) {
+      resultOnes.push("V");
+  } else if (num === 6) {
+      resultOnes.push("VI");
+  } else if (num === 7) {
+      resultOnes.push("VII");
+  } else if (num === 8) {
+      resultOnes.push("VIII");
+  } else if (num === 9) {
+      resultOnes.push("IX");
+  }
+  return resultOnes;
+}
+
+var tens = function(num) {
+  var resultTens = [];
+  if (num === 10) {
+    resultTens.push("X")
+  } else if (num === 20) {
+      resultTens.push("XX");
   } else if (num === 3) {
       resultTens.push("III");
   } else if (num === 4) {
@@ -56,7 +84,9 @@ $(function() {
     if (userInput < 0 || userInput > 3999) {
       alert ('Not a valid number. Choose a number between 1 and 3999');
     }
-    var result = converter(userInput);
+    var onesResult = ones(userInput);
+    console.log(onesResult);
+    var result = romanNumeralResult(userInput);
 
     // Show result
     $("#result").show();
