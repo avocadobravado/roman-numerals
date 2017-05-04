@@ -11,6 +11,23 @@ var romanNumeralResult = function(ones, tens, hundreds, thousands) {
 };
   console.log(romanNumeralResult());
 
+var romanNumeralArray = ["X", "IX", "V", "IV", "I"];
+var Numbers = [10, 9, 5, 4, 1];
+var romanString = "";
+var masterFunction = function(input) {
+for (var i = 0; i < numbers.length; i += 1) {
+  if (userInput >= Numbers[i]) {
+    romanString = romanString + roman[i];
+    userInput = userInput - Numbers[i];
+    i = i - 1;
+  }
+  return romanString;
+  
+}
+
+
+}
+
 
 var ones = function(num) {
   var resultOnes = [];
