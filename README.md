@@ -44,4 +44,4 @@ Specs for Roman Numerals:
 
 This project is licensed under the MIT License
 
-**_Daniela Trulls and Rose Sponseller_** Copyright (c) 2017
+**_Karina Roush and Rose Sponseller_** Copyright (c) 2017

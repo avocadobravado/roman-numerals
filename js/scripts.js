@@ -1,13 +1,50 @@
+
 // Business Logic //
-var romanNumerals = ["I", "V", "X", "L", "C", "D", "M"];
-var numbers = [1, 5, 10, 50, 100, 500, 1000];
+var thousands = [];
+var hundreds = [];
+var tens = [];
+var resultHundreds = [];
+var resultThousands = [];
+var romanNumeralResult = [];
+var userInput;
 
+var converter = function(num) {
+  var resultTens = [];
+  if (num === 1) {
+    resultTens.push("I")
+  } else if (num === 2) {
+      resultTens.push("II");
+  } else if (num === 3) {
+      resultTens.push("III");
+  } else if (num === 4) {
+      resultTens.push("IV");
+  } else if (num === 5) {
+      resultTens.push("V");
+  } else if (num === 6) {
+      resultTens.push("VI");
+  } else if (num === 7) {
+      resultTens.push("VII");
+  } else if (num === 8) {
+      resultTens.push("VIII");
+  } else if (num === 9) {
+      resultTens.push("IX");
+  }
+  return resultTens;
+}
+// i, ii, iii, iv, v, vi, vii, viii, iv, x
+//
+// if number - 9 >= 0
+//   result.push("IV")
+//
+// else  if number - 8 >= 0
+//     result.push("VIII")
+//
+//     else  if number - 7 >= 0
+//         result.push(number)
+//
+//         else  if number - 7 >= 0
+//             result.push(number)
 
-// for(var i = 0; i < numbers.length; i++) {
-//   while(userInput > numbers[i]){
-//     romanNumerals =
-//   }
-// }
 
 // Front end logic //
 $(function() {
@@ -19,11 +56,12 @@ $(function() {
     if (userInput < 0 || userInput > 3999) {
       alert ('Not a valid number. Choose a number between 1 and 3999');
     }
-
+    var result = converter(userInput);
 
     // Show result
     $("#result").show();
     // Append in a list
-    $("ul").append("<li>" + userInput + "</li>");
+    $("ul").append("<li>" + result + "</li>");
   });
 });
+// };
